@@ -163,23 +163,23 @@ public class CoffeeConsoleUI {
         int numberCoffee = isValid(scanner);
         switch (numberCoffee) {
             case 1 -> {
-                coffeeMachine.getDrinks().add(new Americano());
+                coffeeMachine.getDrinks().add(new Drink(StandardDrink.AMERICANO));
                 addRecipe(coffeeMachine);
             }
             case 2 -> {
-                coffeeMachine.getDrinks().add(new Cappuccino());
+                coffeeMachine.getDrinks().add(new Drink(StandardDrink.CAPPUCCINO));
                 addRecipe(coffeeMachine);
             }
             case 3 -> {
-                coffeeMachine.getDrinks().add(new Espresso());
+                coffeeMachine.getDrinks().add(new Drink(StandardDrink.ESPRESSO));
                 addRecipe(coffeeMachine);
             }
             case 4 -> {
-                coffeeMachine.getDrinks().add(new FlatWhite());
+                coffeeMachine.getDrinks().add(new Drink(StandardDrink.FLAT_WHITE));
                 addRecipe(coffeeMachine);
             }
             case 5 -> {
-                coffeeMachine.getDrinks().add(new Latte());
+                coffeeMachine.getDrinks().add(new Drink(StandardDrink.LATTE));
                 addRecipe(coffeeMachine);
             }
             case 6 -> menuThree(coffeeMachine.getId());
@@ -303,7 +303,7 @@ public class CoffeeConsoleUI {
         System.out.println("Сколько добавить гр кофейных зерен");
         int quantityBeans = isValid(scanner);
 
-        drinkService.addDrink(name, quantityAqua, quantityMilk, quantityBeans);
+        drinkService.addCustomDrink(name, quantityAqua, quantityMilk, quantityBeans);
         Drink drink = drinkService.findByName(name);
 
         machineService.addDrink(coffeeMachineID, drink);

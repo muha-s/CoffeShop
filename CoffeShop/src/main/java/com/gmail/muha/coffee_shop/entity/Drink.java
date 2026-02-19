@@ -2,7 +2,7 @@ package com.gmail.muha.coffee_shop.entity;
 
 import java.util.Objects;
 
-public abstract class Drink {
+public class Drink {
 
     private String name;
     private final int aqua;
@@ -17,6 +17,12 @@ public abstract class Drink {
         this.beans = beans;
     }
 
+    public Drink(StandardDrink standardDrink) {
+       this.name = standardDrink.getName();
+       this.aqua = standardDrink.getAqua();
+       this.milk = standardDrink.getMilk();
+       this.beans = standardDrink.getBeans();
+    }
 
     public String getName() {
         return name;

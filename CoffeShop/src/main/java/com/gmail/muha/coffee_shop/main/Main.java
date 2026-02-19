@@ -5,9 +5,6 @@ import com.gmail.muha.coffee_shop.repository.CoffeeMachineRepository;
 import com.gmail.muha.coffee_shop.service.CoffeeMachineService;
 import com.gmail.muha.coffee_shop.ui.CoffeeConsoleUI;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -16,6 +13,8 @@ public class Main {
         CoffeeConsoleUI ui = new CoffeeConsoleUI(service);
 
         ui.run();
+
+
 
 
     }
